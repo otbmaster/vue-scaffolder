@@ -19,7 +19,7 @@ module.exports = {
       "type": "string",
       "required": false,
       "message": "Project identifier",
-      "default": "com.midea.msd.identifier"
+      "default": "com.bgy.identifier"
     }
   },
   "skipInterpolation": "src/**/!(base.page).vue",
