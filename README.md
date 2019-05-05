@@ -1,8 +1,9 @@
-# h-project
+# template-project
 
-## Project setup
+#### Vue CLI >= 3 ,使用模板
 ```
-npm install
+npm install -g @vue/cli-init
+vue init vue-scaffolder my-project
 ```
 
 ### Compiles and hot-reloads for development
@@ -17,13 +18,9 @@ npm run build
 
 ### Run your tests
 ```
-npm run test
+npm run buildTest
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
 ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+See [vue-cli](https://cli.vuejs.org/zh/).
