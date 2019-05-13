@@ -13,17 +13,9 @@ const instance = axios.create({
 })
 
 // 请求拦截器
-axios.interceptors.request.use(
+instance.interceptors.request.use(
     config => {
-        if (localStorage.getItem('accessToken')) {
-            config.headers['accessToken'] = localStorage.getItem('accessToken')
-            // config.headers['accessToken'] = '4d61bf3e24cc46ecbe2289352bda7090'
-        }else{
-            config.headers['accessToken'] = new Date().getTime()
-        }
-        if(config.headers['Content-Type'] !== 'application/json'){
-            config.data = (!isFormData(config.data)) ? qs.stringify(config.data) : config.data
-        }
+
         return config;
     },
     error => {
@@ -32,7 +24,7 @@ axios.interceptors.request.use(
     })
 
 // 响应拦截器
-axios.interceptors.response.use(
+instance.interceptors.response.use(
     response => {
         if (response.code === 200) {
             return response.data
@@ -43,4 +35,6 @@ axios.interceptors.response.use(
 }, error => {
     Vue.$vux.toast.text(error.message || '请求失败')
     return Promise.reject(error);
-});
+})
+
+export default instance
