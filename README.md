@@ -3,7 +3,7 @@
 #### Vue CLI >= 3 ,使用模板
 ```
 npm install -g @vue/cli-init
-vue init http://10.8.108.19/front_scaffold/vue_scaffolder.git my-project
+vue init otbmaster/vue-scaffolder my-project
 cd my-project
 npm install
 ```
